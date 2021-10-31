@@ -16,7 +16,14 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "noImplicitAny":true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "node_modules/*"
+      ],
+      "@*": ["src/*"],
+    }
   },
   "include": ["./src"]
 }
