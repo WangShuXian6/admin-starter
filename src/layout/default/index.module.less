@@ -1,3 +1,6 @@
+@headerHeight: 50px;
+@siderBorderRight:1px solid #eee;
+
 #components-layout-demo-top-side-2 .logo {
   float: left;
   width: 120px;
@@ -11,15 +14,16 @@
   margin: 16px 0 16px 24px;
 }
 
-.site-layout-background {
-  background: #F5F5F5;
-  width: 160px;
+.sider {
+  background: #f5f5f5;
+  min-height: calc(100vh - @headerHeight);
+  border-right:@siderBorderRight;
 }
 
-.header{
+.header {
   z-index: 1;
   padding: 0;
   background-color: #fff;
-  height: 50px;
+  height: @headerHeight;
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.06);
 }

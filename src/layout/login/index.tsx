@@ -2,24 +2,23 @@
 import SuspendFallbackLoading from "@/layout/suspendFallbackLoading";
 import { Suspense } from "react";
 import { Outlet } from "react-router";
-import styles from "./index.module.css";
+import styles from "./index.module.less";
 //import GlobalFooter from "../GlobalFooter";
 
 const LoginLayout = () => {
   return (
-    <>
-      <main className={styles.main}>LoginLayout</main>
-      <Suspense
-        fallback={
-          <SuspendFallbackLoading
-            message="Alert message title"
-            description="Further details about the context of this alert."
-          />
-        }
-      >
+    <Suspense
+      fallback={
+        <SuspendFallbackLoading
+          message="Alert message title"
+          description="Further details about the context of this alert."
+        />
+      }
+    >
+      <div className={styles.main}>
         <Outlet />
-      </Suspense>
-    </>
+      </div>
+    </Suspense>
   );
 };
 

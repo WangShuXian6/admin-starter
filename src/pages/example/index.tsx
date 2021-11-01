@@ -4,7 +4,6 @@ import { Outlet } from "react-router";
 const Example = () => {
   return (
     <>
-      <main className={styles.main}>Example</main>
       <Outlet />
     </>
   );

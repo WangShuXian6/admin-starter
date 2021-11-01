@@ -65,6 +65,32 @@ const routerList: RouteParams[] = [
           },
         ],
       },
+      {
+        path: "example222",
+        element: <WrapperRouteComponent element={<Example />} />,
+        title: "示例",
+        icon:<UserOutlined />,
+        children: [
+          {
+            index: true,
+            element: <WrapperRouteComponent element={<Example1 />} />,
+          },
+          {
+            path: "abc1",
+            title: "abc1",
+            element: <WrapperRouteComponent element={<Example1 />} />,
+          },
+          {
+            path: "abc2",
+            title: "abc2",
+            element: <WrapperRouteComponent element={<Example1 />} />,
+          },
+          {
+            path: ":exampleId",
+            element: <WrapperRouteComponent element={<Example1 />} />,
+          },
+        ],
+      },
     ],
   },
   {

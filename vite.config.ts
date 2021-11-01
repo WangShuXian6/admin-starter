@@ -1,10 +1,12 @@
 import fs from "fs";
 // import { ViteAliases } from 'vite-aliases'
+// @ts-ignore
 import lessToJS from "less-vars-to-js";
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import generateVitePlugins from "./config/plugins";
-// import server from './config/server'
+
+import server from './config/server'
 
 const pathResolver = (path: string) => resolve(__dirname, path);
 const themeVariables = lessToJS(
@@ -17,7 +19,9 @@ function pathResolve(dir: string) {
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
+  console.log('command:',command)
   return {
+    base:'',
     plugins: generateVitePlugins({ command }),
     envDir: "environments",
     resolve: {
@@ -37,7 +41,7 @@ export default defineConfig(({ command, mode }) => {
     optimizeDeps: {
       include: ["@ant-design/colors", "@ant-design/icons"],
     },
-    // server,
+    server,
     css: {
       modules: {
         localsConvention: "camelCaseOnly",

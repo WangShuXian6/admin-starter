@@ -1,18 +1,19 @@
 import react from "@vitejs/plugin-react";
-import { vitePluginFaker } from "vite-plugin-faker";
+//import { vitePluginFaker } from "vite-plugin-faker";
 import { viteMockServe } from "vite-plugin-mock";
 import vitePluginImp from "vite-plugin-imp";
 import LibConfig from "./cssLibs";
 import svgr from "vite-plugin-svgr";
 
+//@ts-ignore
 const generateVitePlugins = ({ command }) => [
   react(),
   svgr(),
   viteMockServe({
-    mockPath: "mock",
+    mockPath: "../mock",
     supportTs: true,
     watchFiles: true,
-    localEnabled: command === "serve",
+    localEnabled:true,// command === "serve",
     logger: true,
   }),
   // styleImport({
@@ -28,11 +29,11 @@ const generateVitePlugins = ({ command }) => [
   // }),
   vitePluginImp(LibConfig),
   //ViteAliases(),
-  vitePluginFaker({
-    basePath: "/src/apis",
-    includes: [/^.*Service/],
-    watchFile: true,
-  }),
+  // vitePluginFaker({
+  //   basePath: "/src/apis",
+  //   includes: [/^.*Service/],
+  //   watchFile: true,
+  // }),
 ];
 
 export default generateVitePlugins;

@@ -1,0 +1,35 @@
+// {
+//   "page": 1,
+//   "pageSize": 10,
+//   "other": "demo"
+// }
+
+// GET query
+//?page=1&pageSize=10
+
+// GET response
+{
+  "reason": { "errorCode": 501, "message": "错误描述" }, //	错误原因
+  "status": 0,
+  "result": {
+    "list": [],// 分页数据
+    "total": 2 // 总数
+  }
+}
+
+//POST request
+{}
+
+// POST response 1
+{
+  "reason": { "errorCode": 501, "message": "错误描述" }, //	错误原因
+  "status": 0,
+  "result": ["demo"]
+}
+
+// POST response 2
+{
+  "reason": { "errorCode": 501, "message": "错误描述" }, //	错误原因
+  "status": 0,
+  "result": { "example": 1 }
+}

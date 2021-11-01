@@ -32,11 +32,11 @@ const libList = [
       if (/popconfirm/.test(name)) {
         // support multiple style file path to import
         return [
-          "antd/es/button/style/index.css",
-          "antd/es/popover/style/index.css",
+          "antd/es/button/style/index.less",
+          "antd/es/popover/style/index.less",
         ];
       }
-      return `antd/es/${name}/style/index.css`;
+      return `antd/es/${name}/style/index.less`;
     },
   },
 ];

@@ -8,6 +8,7 @@ import { Outlet } from "react-router";
 import { Link } from "react-router-dom";
 import styles from "./index.module.less";
 import CustomHeader from "./components/Header";
+import { DEFAULT_LAYOUT } from "@/layout/config/constant";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -31,11 +32,11 @@ const DefaultLayout = () => {
       </Header>
       <Layout>
         <Sider
-          collapsible
+          //collapsible
           collapsed={collapsed}
-          width={200}
-          className="site-layout-background"
+          width={DEFAULT_LAYOUT.sider.sideWidth}
           onCollapse={collapse}
+          className={styles.sider}
         >
           <Menu
             mode="inline"
